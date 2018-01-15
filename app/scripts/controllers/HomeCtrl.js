@@ -5,27 +5,23 @@
                 // $scope.currentRoom = null;
                 home.currentRoom = null;
 
-                home.setCurrentRoom = function(room){
-                        home.currentRoom = room;
-                        home.messages = Message.getByRoomId(home.currentRoom.$id);
-                        console.log(home.messages)
-
-                };
-
                 home.addRoom = function() {
                         $uibModal.open({
-                              animation: false  ,
+                              animation: false,
                               templateUrl: '/templates/modal.html',
                               controller: 'ModalCtrl as modal',
                               size: 'sm'
 
                       });
                 };
+                home.setCurrentRoom = function(room){
+                        home.currentRoom = room;
+                        home.messages = Message.getByRoomId(home.currentRoom.$id);
+                        console.log(home.messages)
 
-
-        }
-
+                };
+}
   angular
        .module('blocChat')
-       .controller('HomeCtrl', ['Room', 'Message', '$scope', '$uibModal', HomeCtrl]);
+       .controller('HomeCtrl', ['Room', '$scope', '$uibModal', 'Message', HomeCtrl]);
 })();

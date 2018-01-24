@@ -1,15 +1,16 @@
 (function(){
-      function ModalCtrl(Room, $uibModalInstance){
+      function ModalCtrl(Room, $uibModalInstance,){
         this.newRoom = {};
 
         this.cancel = function(){
               $uibModalInstance.dismiss();
         };
 
-        this.submit =  function(){
+        this.createRoom =  function(){
               Room.add(this.newRoom);
               $uibModalInstance.close();
         };
+
 
       }
         angular

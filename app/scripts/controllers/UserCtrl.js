@@ -3,8 +3,7 @@
                   $scope.setUsername = function(username) {
                           if (username !== undefined){
                             $cookies.put('blocChatCurrentUser', username);
-                            $uibModalInstance.close();
-                            
+                            $uibModalInstance.close();                        
                           } else {
                                 alert("Enter a username");
                           }
